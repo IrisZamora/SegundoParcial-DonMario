@@ -1,0 +1,47 @@
+[
+    {
+      "id": 1,
+      "capacidad": "4",
+      "disponible": true
+    },
+    {
+      "id": 2,
+      "capacidad": "6",
+      "disponible": true
+    },
+    {
+      "id": 3,
+      "capacidad": "4",
+      "disponible": true
+    },
+    {
+      "id": 4,
+      "capacidad": "4",
+      "disponible": true
+    },
+    {
+      "id": 5,
+      "capacidad": "4",
+      "disponible": false
+    },
+    {
+      "id": 8,
+      "capacidad": "12",
+      "disponible": true
+    },
+    {
+      "id": 9,
+      "capacidad": "10",
+      "disponible": true
+    },
+    {
+      "id": 10,
+      "capacidad": "6",
+      "disponible": true
+    },
+    {
+      "id": 10,
+      "capacidad": "6",
+      "disponible": true
+    }
+  ]

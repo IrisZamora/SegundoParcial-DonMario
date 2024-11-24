@@ -1,0 +1,45 @@
+style. 
+    nav { 
+        display: flex; 
+        justify-content: space-between; /* Espacio entre elementos */ 
+        align-items: center; /* Centra verticalmente */ 
+        background-color: #9b4dca; 
+    } 
+    ul { 
+        list-style: none; 
+        padding: 0; 
+        margin: 0; 
+        display: flex; 
+    } 
+    li { 
+        padding: 10px; 
+        border-bottom: 1px; 
+        display: flex;
+    } 
+    li:last-child { 
+        border-bottom: none; 
+    } 
+    a { 
+        color: white; 
+        text-decoration: none; 
+    } 
+    .nav-icon { 
+        font-size: 24px; 
+        color: white; 
+        margin-left: 20px; 
+    } 
+    .nav-icon:hover { 
+        color: #28a745; 
+    }
+nav 
+    ul 
+        li 
+            a(href="/") Home
+        li 
+            a(href="/login") Panel Administracion
+        li
+            a(href="/interfazCliente") Panel Cliente
+        li 
+            i.fas.fa-comments.nav-icon 
+            a(href="/chat") Hablemos
+            

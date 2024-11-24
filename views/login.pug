@@ -1,0 +1,43 @@
+doctype html
+html
+  head
+    title Iniciar Sesión
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css")
+    link(rel="stylesheet", href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css")
+    
+  style.
+    body {
+        background-color: #b9cdc7;
+        font-family: Arial, sans-serif;
+        color: #000000;
+        width:90%;
+        margin:auto;
+      }
+      header { 
+            background-color: #9b4dca;
+            color: white; 
+            padding: 20px; 
+            text-align: center; 
+      } 
+      h1 {
+        font-size: 3rem;
+        color: #333;
+        text-align: center;
+        padding: 20px;
+      }
+  body
+    header 
+      include partials/_nav
+    h1 Iniciar Sesión
+    form(action="/login" method="POST")
+      label(for="username") Usuario:
+      input(type="text" name="username" required)
+      br
+      label(for="password") Contraseña:
+      input(type="password" name="password" required)
+      br
+      button(type="submit") Iniciar Sesión
+    
+
+  
+

@@ -1,0 +1,176 @@
+doctype html
+html
+    head
+        title Chat
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js")
+        script(src="/socket.io/socket.io.js")
+        script(src="/main.js")
+    style.
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: "Open Sans", sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #ebebeb;
+        }
+
+        .title {
+            margin: 20px 0;
+        }
+
+        .main {
+            border: 8px solid #dddddd;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        .name {
+            display: flex;
+            font-size: 32px;
+            font-weight: 700;
+            padding: 8px 16px;
+            color: #7e7e7e;
+            background-color: #ebebeb;
+        }
+
+        .name > span {
+            color: #bbb;
+        }
+
+        .name-input {
+            font-size: 24px;
+            font-weight: 700;
+            color: #7e7e7e;
+            flex-grow: 1;
+            border: none;
+            margin: 0px 12px;
+            outline: none;
+            background-color: #ebebeb;
+        }
+
+        .message-container {
+            display: flex;
+            flex-direction: column;
+            background-color: #f6f6f6;
+            width: 400px;
+            height: 600px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+
+        .message-left, .message-right {
+            list-style: none;
+            padding: 8px 12px;
+            margin: 12px;
+            max-width: 250px;
+            font-size: 18px;
+            word-wrap: break-word;
+        }
+
+        .message-left {
+            border-radius: 20px 20px 20px 0px;
+            align-self: flex-start;
+            background-color: #fff;
+            box-shadow: -2px 2px 4px #dcdcdc;
+        }
+
+        .message-right {
+            border-radius: 20px 20px 0px 20px;
+            align-self: flex-end;
+            background-color: #2d2d2d;
+            box-shadow: 2px 2px 4px #dcdcdc;
+            color: #f6f6f6;
+        }
+
+        .message-left > p > span, .message-right > p > span {
+            display: block;
+            font-style: italic;
+            font-size: 12px;
+            margin-top: 4px;
+        }
+
+        .feedback {
+            font-style: italic;
+            font-size: 14px;
+            padding: 0px 16px 16px 16px;
+            color: #2d2d2d;
+            text-align: center;
+        }
+
+        .message-form {
+            display: flex;
+            justify-content: space-between;
+            width: 400px;
+        }
+
+        .message-input {
+            flex-grow: 1;
+            height: 48px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            padding: 0px 12px;
+            background-color: #fff;
+        }
+
+        .send-button {
+            height: 48px;
+            font-size: 16px;
+            border: none;
+            padding: 0px 20px;
+            outline: none;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        .v-divider {
+            height: 48px;
+            width: 2px;
+            background-color: #f6f6f6;
+        }
+
+        .clients-total {
+            margin: 20px 0px;
+            color: #7e7e7e;
+        }
+
+    body
+        h1.title Hablemos con Don Mario
+        .main
+            .name
+                span
+                    i.far.fa-user
+                input#name-input.name-input(type="text", value="anonymous", maxlength="20")
+
+            ul.message-container#message-container
+                li.message-left
+                    p.message
+                        | Bienvenido al chat 
+                    span bluebird ⚪ 14 Noviembre 16:05
+                li.message-right
+                    p.message
+                        | En que podemos ayudarte?
+                    span bluebird ⚪ 14 Noviembre 16:05
+                li.message-feedback
+                    p.feedback#feedback killer is typing a message
+
+            form.message-form#message-form(data-user-id="12345", data-user-name="Don Mario")
+                input.message-input(type="text", name="message", id="message-input")
+                .v-divider
+                button.send-button(type="submit")
+                    | send 
+                    span
+                        i.fas.fa-paper-plane
+
+    h3.clients-total#clients-total Total clients: 2
+
+        
