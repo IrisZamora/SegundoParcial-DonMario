@@ -5,7 +5,7 @@ import bodyParser from 'body-parser';
 import http from 'http';
 import { Server } from 'socket.io';
 import moment from 'moment';
-import connectDB from './db.js';
+import connectDB from '../db.js';
 import dotenv from 'dotenv';
 import serverless from 'serverless-http';
 
@@ -14,10 +14,10 @@ dotenv.config();
 
 
 // Importar las rutas
-import clienteRoutes from './routes/clienteRoutes.js';
-import adminRoutes from './routes/adminRoutes.js';
-import Reserva from './models/reserva.js'; // Modelo de reservas
-import Mesa from './models/mesa.js'; // Modelo de mesas
+import clienteRoutes from '../routes/clienteRoutes.js';
+import adminRoutes from '../routes/adminRoutes.js';
+import Reserva from '../models/reserva.js'; // Modelo de reservas
+import Mesa from '../models/mesa.js'; // Modelo de mesas
 
 
 const app = express();
